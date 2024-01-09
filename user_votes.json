@@ -93,5 +93,10 @@
     "thing": "the funny bot",
     "vote": "dislike",
     "user_id": 671928147691962399
+  },
+  {
+    "thing": "science",
+    "vote": "dislike",
+    "user_id": 257523633000284160
   }
 ]

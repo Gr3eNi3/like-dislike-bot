@@ -47,7 +47,7 @@ async def on_voice_state_update(member, before, after):
             voice_channel = await channel.connect()
 
             # Play a sound (replace 'sound_file.mp3' with the actual sound file)
-            voice_channel.play(FFmpegPCMAudio('sound_file_1.mp3', executable="D:/M4x/DC Bot/ffmpeg-2024-01-04-git-33698ef891-full_build/bin/ffmpeg.exe"))
+            voice_channel.play(FFmpegPCMAudio('sound_file_1.mp3', executable="./ffmpeg/bin/ffmpeg.exe"))
 
             # Disconnect after playing the sound
             while voice_channel.is_playing():

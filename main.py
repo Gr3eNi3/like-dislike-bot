@@ -240,4 +240,4 @@ async def get_thing_from_reaction(bot, payload):
     message = await channel.fetch_message(message_id)
     return message.embeds[0].title.split("Do you like ", 1)[1].split("?", 1)[0]
 
-bot.run('MTE5MzQ3NTUxMDAzMDgzNTcyMw.GzO7lw.nxqnaiFf5-SsJK_qiphXVhlt_gSkWoDuZxDgo0')
+bot.run('Bot_Token')

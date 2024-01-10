@@ -71,6 +71,7 @@ async def DYL(ctx, *, thingy):
         add_poll('poll_list.json',poll)
         with open('poll_list.txt', 'a') as f:
             f.write(thing.lower() + '\n')
+            sort_list('poll_list.txt')
         poll_message = await ctx.send(embed=get_poll_embed(thing.lower()))
         await poll_message.add_reaction('👍')
         await poll_message.add_reaction('👎')
@@ -167,7 +168,15 @@ async def silent_add(qualifier, message, alignment):
         add_poll('poll_list.json',poll)
         with open('poll_list.txt', 'a') as f:
             f.write(thing.lower() + '\n')
+        await sort_list('poll_list.txt')
         await silent_add(qualifier, message, alignment)
+
+async def sort_list(list):
+    with open(list, 'r') as f:
+        unsorted_list = f.readlines()
+    sorted_list = sorted(unsorted_list)
+    with open(list, 'w') as f:
+        f.writelines(sorted_list)
 
 async def respond_with(response, message):
     await message.channel.send(f""+response)
